@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Film from './Components/Film/Film';
+const films = [
+  {name:'Joy', genre: 'drama',poster:'../../images/titane.jpg', year: 2016},
+  {name:'Joy', genre: 'drama', poster:'joyposter', year: 2016},
+  {name:'Joy', genre: 'drama',poster:'joyposter', year: 2016},
+  {name:'Joy', genre: 'drama',poster:'joyposter', year: 2016}
 
+]
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        films.map((film,index)=> (
+          <Film name={film.name} genre={film.genre} poster={film.poster} year={film.year}/>
+
+
+        )
+        
+        )
+      }
     </div>
   );
 }
